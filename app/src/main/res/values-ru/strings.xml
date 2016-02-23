@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Задание1</string>
+
+    <string name="hint_name">Имя</string>
+    <string name="hint_surname">Фамилия</string>
+    <string name="hint_submit">Отправить</string>
+    <string name="hint_birth">Дата рождения</string>
+    <string name="hint_age">Возраст</string>
+
+    <string name="action_settings">Настройки</string>
+    <string name="summary">Cаммари</string>
+
+</resources>

@@ -12,16 +12,8 @@ buildscript {
     }
 }
 
-
 allprojects {
-    repositories { 
-        jcenter(); 
-        mavenLocal() 
+    repositories {
+        jcenter()
     }
-}
-
-task wrapper(type: Wrapper) {
-    group 'Build Setup'
-    description 'Initializes Gradle Wrapper'
-    gradleVersion = '2.2.1'
 }
