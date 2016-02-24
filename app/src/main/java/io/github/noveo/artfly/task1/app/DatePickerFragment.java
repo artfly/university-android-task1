@@ -46,7 +46,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
                 && today.get(Calendar.DAY_OF_MONTH) < birthdate.get(Calendar.DAY_OF_MONTH)) {
             age--;
         }
-        return age;
+        return age < 0? 0 : age;
     }
 
     public Date getDate() {
