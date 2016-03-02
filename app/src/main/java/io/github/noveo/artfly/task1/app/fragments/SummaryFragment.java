@@ -1,4 +1,4 @@
-package io.github.noveo.artfly.task1.app;
+package io.github.noveo.artfly.task1.app.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,27 +8,28 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import io.github.noveo.artfly.task1.app.R;
 
-/**
- * Created by arty on 23.02.16.
- */
 public class SummaryFragment extends Fragment {
     private static final String NAME_KEY = "NAME_KEY";
     private static final String SURNAME_KEY = "SURNAME_KEY";
     private static final String AGE_KEY = "AGE_KEY";
-    private String name;
-    private String surname;
-    private String age;
-    @Bind(R.id.summary_age) TextView ageView;
-    @Bind(R.id.summary_name) TextView nameView;
-    @Bind(R.id.summary_surname) TextView surnameView;
+    @Bind(R.id.summary_age)
+    TextView ageView;
+    @Bind(R.id.summary_name)
+    TextView nameView;
+    @Bind(R.id.summary_surname)
+    TextView surnameView;
+    private CharSequence name;
+    private CharSequence surname;
+    private CharSequence age;
 
-    public static SummaryFragment newInstance(String name, String surname, String age) {
+    public static SummaryFragment newInstance(CharSequence name, CharSequence surname, CharSequence age) {
         SummaryFragment summaryFragment = new SummaryFragment();
         Bundle params = new Bundle();
-        params.putString(NAME_KEY, name);
-        params.putString(SURNAME_KEY, surname);
-        params.putString(AGE_KEY, age);
+        params.putCharSequence(NAME_KEY, name);
+        params.putCharSequence(SURNAME_KEY, surname);
+        params.putCharSequence(AGE_KEY, age);
         summaryFragment.setArguments(params);
         return summaryFragment;
     }
@@ -37,9 +38,9 @@ public class SummaryFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle args = getArguments();
-        this.name = args.getString(NAME_KEY);
-        this.surname = args.getString(SURNAME_KEY);
-        this.age = args.getString(AGE_KEY);
+        this.name = args.getCharSequence(NAME_KEY);
+        this.surname = args.getCharSequence(SURNAME_KEY);
+        this.age = args.getCharSequence(AGE_KEY);
     }
 
     @Override
@@ -54,5 +55,11 @@ public class SummaryFragment extends Fragment {
         nameView.setText(name);
         surnameView.setText(surname);
         ageView.setText(age);
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 }

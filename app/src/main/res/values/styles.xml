@@ -7,11 +7,17 @@
 
     <style name="SummaryTitle">
         <item name="android:textColor">@color/material_grey_600</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">@dimen/summary_title_text_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_marginTop">20dp</item>
-        <item name="android:layout_marginBottom">15dp</item>
+        <item name="android:layout_marginTop">@dimen/summary_title_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/summary_title_margin_bottom</item>
+    </style>
+
+    <style name="LandSummaryValue">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/summary_title_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/summary_title_margin_bottom</item>
     </style>
 
 </resources>
